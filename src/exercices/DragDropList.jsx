@@ -17,8 +17,6 @@ function DragDropList() {
     }
 
     function handleDragOver(overItemIndex) {
-        
-
         // if (draggingItemIndex === null) return;
         if (draggingItemIndex === overItemIndex) return;
         console.log("dragging over item with index : ", overItemIndex)
