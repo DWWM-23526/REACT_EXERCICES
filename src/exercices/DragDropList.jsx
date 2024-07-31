@@ -11,17 +11,17 @@ function DragDropList() {
         setDraggingItemIndex(draggingItemIndex);
     }
 
-    // function handleDragEnd(){
-    //     console.log("dragging ends")
-    //     setDraggingItemIndex(null);
-    // }
+    function handleDragEnd(){
+        console.log("dragging ends")
+        setDraggingItemIndex(null);
+    }
 
     function handleDragOver(overItemIndex) {
-        console.log("dragging over item with index : ", overItemIndex)
+        
 
         // if (draggingItemIndex === null) return;
         if (draggingItemIndex === overItemIndex) return;
-    
+        console.log("dragging over item with index : ", overItemIndex)
         const newItems = [...items];
         const draggingItemValue = newItems[draggingItemIndex];
         newItems.splice(draggingItemIndex, 1);
@@ -38,7 +38,7 @@ function DragDropList() {
                     <li key={index} draggable 
                         onDragStart={() => handleDragStart(index)}
                         onDragOver={() => handleDragOver(index)}
-                        // onDragEnd={handleDragEnd}
+                        onDragEnd={handleDragEnd}
                     >
                         {item}
                     </li>
